@@ -1,35 +1,54 @@
-import mysql from "mysql2/promise";
 import { NextResponse } from "next/server";
+import db from "@/lib/db";
 
 export async function POST(
   req: Request
 ) {
   try {
-    const body = await req.json();
+    const body =
+      await req.json();
 
-    const connection =
-    await mysql.createConnection({
-      host: "localhost",
-      user: "root",
-      password: "",
-      database: "aks-test",
-    });
+    const {
+      name,
+      email,
+      subject,
+      message,
+    } = body;
 
-    await connection.execute(
+    if (
+      !name ||
+      !email ||
+      !subject ||
+      !message
+    ) {
+      return NextResponse.json(
+        {
+          success: false,
+          message:
+            "All fields required",
+        },
+        { status: 400 }
+      );
+    }
+
+    await db.query(
       `
       INSERT INTO contact_inquiry
-      (name,email,subject,message)
-      VALUES (?,?,?,?)
-    `,
+      (
+        name,
+        email,
+        subject,
+        message
+      )
+      VALUES ($1, $2, $3, $4)
+      `,
       [
-        body.name,
-        body.email,
-        body.subject,
-        body.message,
+        name,
+        email,
+        subject,
+        message,
       ]
     );
-
-    await connection.end();
 
     return NextResponse.json({
       success: true,
