@@ -2,7 +2,7 @@ export default function About() {
     return (
       <section
         id="about"
-        className="relative py-28 px-6 bg-black overflow-hidden"
+        className="relative px-6 bg-black overflow-hidden"
       >
         {/* Glow */}
         <div className="absolute left-0 top-10 w-80 h-80 bg-cyan-500/20 blur-[140px] rounded-full"></div>
@@ -36,7 +36,7 @@ export default function About() {
               {/* Stats */}
               <div className="grid grid-cols-2 gap-5 mt-10">
                 <div className="skill-card">
-                  <h3 className="text-4xl font-black text-cyan-400">
+                  <h3 className="text-3xl font-black text-cyan-400">
                     2 Year
                   </h3>
                   <p className="text-gray-400 mt-2">
@@ -45,7 +45,7 @@ export default function About() {
                 </div>
   
                 <div className="skill-card">
-                  <h3 className="text-4xl font-black text-cyan-400">
+                  <h3 className="text-3xl font-black text-cyan-400">
                     20+
                   </h3>
                   <p className="text-gray-400 mt-2">
