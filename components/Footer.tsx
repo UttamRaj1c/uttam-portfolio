@@ -13,14 +13,14 @@ export default function Footer() {
   
           <div className="flex gap-5">
             <a
-              href="#"
+              href="https://github.com/UttamRaj1c"
               className="text-gray-400 hover:text-cyan-400 transition"
             >
               GitHub
             </a>
   
             <a
-              href="#"
+              href="https://www.linkedin.com/in/mr-uttam-882365152?utm_source=share_via&utm_content=profile&utm_medium=member_android"
               className="text-gray-400 hover:text-cyan-400 transition"
             >
               LinkedIn
