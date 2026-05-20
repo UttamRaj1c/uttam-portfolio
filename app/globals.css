@@ -1,26 +1,190 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: black;
+  overflow-x: hidden;
+}
+
+/* Neon Text */
+
+
+/* Nav Links */
+.nav-link {
+  position: relative;
+  transition: 0.3s;
+}
+
+.nav-link:hover {
+  color: #22d3ee;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background: #22d3ee;
+  left: 0;
+  bottom: -5px;
+  transition: 0.3s;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Neon Button */
+.neon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #22d3ee;
+  color: black;
+  padding: 16px 35px;
+  border-radius: 999px;
+  font-weight: 700;
+  transition: 0.3s;
+}
+
+.neon-btn:hover {
+  transform: translateY(-4px);
+}
+/* Skill Card */
+.skill-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(34, 211, 238, 0.2);
+  border-radius: 25px;
+  padding: 30px;
+  transition: 0.4s ease;
+  backdrop-filter: blur(20px);
+}
+
+.skill-card:hover {
+  transform: translateY(-8px);
+  border-color: #22d3ee;
+  box-shadow:
+    0 0 25px rgba(34, 211, 238, 0.25);
+}
+
+/* About Card */
+.about-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(34,211,238,0.2);
+  border-radius: 30px;
+  padding: 40px;
+  backdrop-filter: blur(20px);
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  padding-bottom: 16px;
+}
+/* Timeline Card */
+.timeline-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(34,211,238,0.15);
+  border-radius: 28px;
+  padding: 35px;
+  transition: .4s;
+}
+
+.timeline-card:hover {
+  transform: translateY(-8px);
+  border-color: #22d3ee;
+  box-shadow: 0 0 35px rgba(34,211,238,.15);
+}
+
+/* Project Card */
+.project-card {
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(34,211,238,.15);
+  border-radius: 30px;
+  padding: 35px;
+  transition: .4s;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  border-color: #22d3ee;
+  box-shadow: 0 0 30px rgba(34,211,238,.2);
+}
+/* CONTACT CARD */
+.contact-card {
+  background: rgba(10, 10, 10, 0.95);
+  border: 1px solid rgba(34, 211, 238, 0.2);
+  border-radius: 28px;
+  padding: 40px;
+  backdrop-filter: blur(20px);
+  min-height: 100%;
+}
+
+/* INPUT */
+.contact-input {
+  width: 100%;
+  height: 60px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(34,211,238,.18);
+  border-radius: 16px;
+  padding: 0 20px;
+  color: #fff;
+  font-size: 16px;
+  outline: none;
+  transition: .3s ease;
+  display: block;
+}
+
+/* TEXTAREA */
+textarea.contact-input {
+  min-height: 180px;
+  padding-top: 20px;
+  resize: none;
+}
+
+/* PLACEHOLDER */
+.contact-input::placeholder {
+  color: rgba(255,255,255,0.55);
+}
+
+/* FOCUS */
+.contact-input:focus {
+  border-color: #22d3ee;
+  box-shadow:
+    0 0 15px rgba(34,211,238,.15),
+    0 0 30px rgba(34,211,238,.10);
+}
+
+/* BUTTON FIX */
+.neon-btn {
+
+  min-height: 60px;
+  border: none;
+  cursor: pointer;
+}
+
+/* MOBILE */
+@media (max-width:768px) {
+  .contact-card {
+    padding: 24px;
+  }
+}
+
+/* Social Button */
+.social-btn {
+  border: 1px solid rgba(34,211,238,.25);
+  padding: 12px 20px;
+  border-radius: 999px;
+  color: #22d3ee;
+  transition: .3s;
+}
+
+.social-btn:hover {
+  background: #22d3ee;
+  color: black;
 }
